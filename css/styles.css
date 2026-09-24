@@ -1,122 +1,98 @@
-#imagen3{
-    width: 100px;
-    position: relative;
-    left: 40%;
-    
-    
-}
-#texto1{
-    text-align: center;
-
-}
-#articulo1{
-    position: relative;
-    left: 37%;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    background-color: rgb(57, 57, 182);
-    color: rgb(255, 253, 253);
-    text-decoration: overline;
-    text-align: center;
-    box-shadow: 0px 0px 7px 4px rgb(67, 67, 126);
-    padding: 20px;
-    width: 500px;
+#fondo {
+    background-color: rgb(68, 68, 197);
+    margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    border-radius: 100px;
 }
 
-.precio{
-    background-color: #73717e;
-    color: rgb(255, 253, 253);
-    text-decoration: overline;
-    text-align: center;
-    width: 200px;
-    position: relative;
-    left: 30%;
-    transition: background-color 0.3s ease;
-    border-radius: 10px;
-}
-#descripcion{
-    background-color: rgb(57, 57, 182);
-    color: rgb(255, 253, 253);
-    text-decoration: overline;
-    text-align: center;
-}
-#servicio2{
-    position: relative;
-    left: 37%;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    background-color: rgb(57, 57, 182);
-    color: rgb(255, 253, 253);
-    text-decoration: overline;
-    text-align: center;
-    box-shadow: 0px 0px 7px 4px rgb(67, 67, 126);
-    padding: 20px;
-    width: 500px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 100px;
-}
-
-#servicios3{
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    background-color: rgb(57, 57, 182);
-    color: rgb(255, 253, 253);
-    text-decoration: overline;
-    text-align: center;
-    box-shadow: 0px 0px 7px 4px rgb(67, 67, 126);
-    padding: 20px;
-    width: 500px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 100px;
-    position: relative;
-    left: 37%;
-}
-
-#precio:hover{
-    background-color: rgb(49, 49, 148);
-    color: rgb(255, 253, 253);
-}
-.precio:hover{
-    background-color: rgb(172, 172, 223);
-    color: rgb(38, 24, 224);
-    animation: animacion 0.5s ease-in-out;
-}
-@keyframes animacion {
-    slideIn {
-        from {
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-}
-#titulo{
+#titulo {
     background-color: rgb(119, 119, 206);
+    color: rgb(255, 253, 253);
     text-align: center;
     width: 100%;
-    height: 300px;
-    padding: 0px;
-    bottom: 100px;
-    
+    padding: 60px 0;
+    margin: 0;
+    animation: animacion 2s ease-in-out;
 }
-#fondo{
-    background-color: rgb(68, 68, 197);
+
+#servicios {
     display: grid;
-    gap:20px;
+    gap: 25px;
     grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    justify-items: center; 
+}
+
+.tarjeta-servicio {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    background-color: rgb(57, 57, 182);
+    color: rgb(255, 253, 253);
+    text-align: center;
+    box-shadow: 0px 0px 7px 4px rgb(67, 67, 126);
+    padding: 25px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 30px;
+}
+
+.texto-servicio {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.img-servicio {
+    width: 100px;
+    display: block;
+    margin: 10px auto;
+}
+
+.descripcion-servicio {
+    background-color: rgb(57, 57, 182);
+    color: rgb(255, 253, 253);
+    text-align: center;
+    margin: 15px 0;
+}
+
+.precio {
+    background-color: #73717e;
+    color: rgb(255, 253, 253);
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    margin: 10px auto 0 auto;
+    padding: 8px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+.precio:hover {
+    background-color: rgb(172, 172, 223);
+    color: rgb(38, 24, 224);
 }
 
 @media (min-width: 768px) {
-    #articulo1, #servicio2, #servicios3 {
-        width: 80%;
-        left: 10%;
+    #servicios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #servicios {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
